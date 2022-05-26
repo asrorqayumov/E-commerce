@@ -1,0 +1,50 @@
+nav {
+  height: 80px;
+  width: 100%;
+  background-color: #ffffff;
+  position: relative;
+  @include flexbox(row, center, space-between);
+  border-radius: 12px;
+  padding-left: 50px;
+  padding-right: 50px;
+  .brand-logo{
+    font-size: 30px;
+    font-weight: bold;
+    color: $fair;
+    text-decoration: none;
+  }
+  .nav-list{
+    @include flexbox(row, center, space-around);
+    list-style: none;
+    li{
+      padding-left: 15px;
+      .badge{
+        width: 18px;
+        height: 18px;
+        background-color: $fair;
+        border-radius: 50%;
+        left: 16px;
+        top:5px;
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        color: #ffffff;
+        font-size: 15px;
+        padding-top: 1px;
+      }
+      i{
+        font-size: 21px;
+        color: $fair;
+      }
+      a{
+        font-size: 17px;
+        color: $fair;
+        text-decoration: none;
+      }
+      &:hover{
+        transform: translateY(-4px);
+        transition: transform 0.5s;
+      }
+    }
+  }
+}

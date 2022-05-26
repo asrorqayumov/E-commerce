@@ -1,17 +1,31 @@
 {
-  "name": " ",
+  "name": "e-commerce",
   "version": "0.0.1",
-  "description": "",
-  "keywords": "",
-  "license": "",
+  "keywords": [],
+  "license": "ISC",
   "author": "",
   "scripts": {
     "build": "parcel build index.html",
     "dev": "parcel index.html --open",
+    "sass":"sass --watch sass:css", 
     "start": "npm run build && npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
-  }
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.52.1"
+  },
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Asrorbekuz/E-commerce-simple-.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Asrorbekuz/E-commerce-simple-/issues"
+  },
+  "homepage": "https://github.com/Asrorbekuz/E-commerce-simple-#readme",
+  "description": ""
 }

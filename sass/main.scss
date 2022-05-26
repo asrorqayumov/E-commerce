@@ -1,0 +1,20 @@
+@import "./utils/index";
+@import "./layout/index";
+@import "./pages/index";
+@import "./components/index";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: linear-gradient(360deg, #fdfbfb 10%, #ebedee 360%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  font-family: sans-serif ;
+  font-size: 16px;
+}

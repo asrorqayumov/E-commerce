@@ -1,0 +1,53 @@
+#card-page {
+  .row {
+    .cards-wrapper {
+      border: 0.5px solid #ccc;
+      border-radius: 12px;
+      padding: 10px;
+      margin-bottom: 30px;
+    }
+    .product {
+      width: 100%;
+      padding: 20px;
+      @include flexbox(row, center, start);
+      border-bottom: 0.5px solid #ccc;
+      &:last-child {
+        border-bottom: none;
+      }
+      img {
+        max-width: 200px;
+        height: 180px;
+        margin-left: 80px;
+        margin-right: 80px;
+      }
+      .product-info {
+        h3 {
+          font-size: 1.5em;
+          margin-bottom: 10px;
+        }
+        .product-price {
+          font-size: 1.8rem;
+          color: $fair;
+          font-weight: 600;
+        }
+      }
+    }
+    .col-sm-3 {
+      .box-total {
+        border: 0.5px solid #ccc;
+        border-radius: 12px;
+        width: 200px;
+        text-align: center;
+        position: sticky;
+        .price-total {
+          color: #2d3092;
+          font-size: 1.5rem;
+        }
+        .btn-total {
+          background: $fair;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

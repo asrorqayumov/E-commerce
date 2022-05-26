@@ -1,0 +1,15 @@
+.btn{
+    padding: 10px 30px;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    &:active {
+        transform: scale(0.9);
+    }
+}
+.btn-submit{
+    background-color: $fair;
+    color: #fff;
+    float: right;
+}

@@ -1,0 +1,16 @@
+#home-page, #card-page {
+    .heading-title{
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 1.2;
+        
+    }
+    .products-wrapper{
+        flex-wrap: wrap;
+        .card{
+            margin-right: 75px;
+        }
+    }
+}
+
+
