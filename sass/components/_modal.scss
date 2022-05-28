@@ -1,4 +1,4 @@
-.modal-overlay {
+.modal-overlay,.card-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -39,7 +39,7 @@
       top: 5px;
       right: 5px;
     }
-    .addproduct-form {
+    .addproduct-form, .editproduct-form {
       .group {
         position: relative;
         .input,

@@ -21,6 +21,7 @@
         margin-right: 80px;
       }
       .product-info {
+        width: 100%;
         h3 {
           font-size: 1.5em;
           margin-bottom: 10px;
@@ -29,6 +30,12 @@
           font-size: 1.8rem;
           color: $fair;
           font-weight: 600;
+        }
+        .card-number-wrapper{
+          @include flexbox(row, center, space-between);
+          div{
+            @include flexbox(row, center, space-between);
+          }
         }
       }
     }

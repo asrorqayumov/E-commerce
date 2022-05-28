@@ -1999,6 +1999,9 @@ nav .nav-list li:hover {
   margin-left: 80px;
   margin-right: 80px;
 }
+#card-page .row .product .product-info {
+  width: 100%;
+}
 #card-page .row .product .product-info h3 {
   font-size: 1.5em;
   margin-bottom: 10px;
@@ -2007,6 +2010,18 @@ nav .nav-list li:hover {
   font-size: 1.8rem;
   color: #FF7A01;
   font-weight: 600;
+}
+#card-page .row .product .product-info .card-number-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+#card-page .row .product .product-info .card-number-wrapper div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 #card-page .row .col-sm-3 .box-total {
   border: 0.5px solid #ccc;
@@ -2039,6 +2054,14 @@ nav .nav-list li:hover {
   background-color: #FF7A01;
   color: #fff;
   float: right;
+}
+
+.btn-disabled {
+  cursor: not-allowed !important;
+  background: rgba(255, 122, 1, 0.6) !important;
+}
+.btn-disabled:active {
+  transform: scale(1) !important;
 }
 
 .card {
@@ -2214,14 +2237,25 @@ nav .nav-list li:hover {
   transform: scale(0.5);
   transform: translateY(-200%);
   transition: opacity 0.2s, transform 0.8s;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
 }
 .card .inside .contents .description {
   font-size: 16px;
   color: #f4f4f4;
-  margin-bottom: 5px;
+}
+.card .inside .contents .btn-group {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding-top: 15px;
+}
+.card .inside .contents .btn-group .btn {
+  padding: 10px;
+  font-size: 0.8rem;
 }
 
-.modal-overlay {
+.modal-overlay, .card-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -2235,7 +2269,7 @@ nav .nav-list li:hover {
   visibility: hidden;
   z-index: -10;
 }
-.modal-overlay .modal-container {
+.modal-overlay .modal-container, .card-modal-overlay .modal-container {
   width: auto;
   height: auto;
   position: relative;
@@ -2248,13 +2282,13 @@ nav .nav-list li:hover {
   min-width: 500px;
   min-height: 200px;
 }
-.modal-overlay .modal-container .modal-title {
+.modal-overlay .modal-container .modal-title, .card-modal-overlay .modal-container .modal-title {
   font-size: 1.8rem;
   font-weight: 700;
   line-height: 1.2;
   color: #FF7A01;
 }
-.modal-overlay .modal-container .close-btn {
+.modal-overlay .modal-container .close-btn, .card-modal-overlay .modal-container .close-btn {
   position: absolute;
   padding: 10px;
   border: none;
@@ -2263,18 +2297,21 @@ nav .nav-list li:hover {
   color: #fff;
   cursor: pointer;
 }
-.modal-overlay .modal-container .close-btn:active {
+.modal-overlay .modal-container .close-btn:active, .card-modal-overlay .modal-container .close-btn:active {
   transform: scale(0.9);
 }
-.modal-overlay .modal-container .close-btn-top {
+.modal-overlay .modal-container .close-btn-top, .card-modal-overlay .modal-container .close-btn-top {
   top: 5px;
   right: 5px;
 }
-.modal-overlay .modal-container .addproduct-form .group {
+.modal-overlay .modal-container .addproduct-form .group, .modal-overlay .modal-container .editproduct-form .group, .card-modal-overlay .modal-container .addproduct-form .group, .card-modal-overlay .modal-container .editproduct-form .group {
   position: relative;
 }
 .modal-overlay .modal-container .addproduct-form .group .input,
-.modal-overlay .modal-container .addproduct-form .group .textarea {
+.modal-overlay .modal-container .addproduct-form .group .textarea, .modal-overlay .modal-container .editproduct-form .group .input,
+.modal-overlay .modal-container .editproduct-form .group .textarea, .card-modal-overlay .modal-container .addproduct-form .group .input,
+.card-modal-overlay .modal-container .addproduct-form .group .textarea, .card-modal-overlay .modal-container .editproduct-form .group .input,
+.card-modal-overlay .modal-container .editproduct-form .group .textarea {
   font-size: 16px;
   padding: 10px 10px 10px 5px;
   display: block;
@@ -2285,7 +2322,7 @@ nav .nav-list li:hover {
   outline: none;
   font-family: sans-serif;
 }
-.modal-overlay .modal-container .addproduct-form .group label {
+.modal-overlay .modal-container .addproduct-form .group label, .modal-overlay .modal-container .editproduct-form .group label, .card-modal-overlay .modal-container .addproduct-form .group label, .card-modal-overlay .modal-container .editproduct-form .group label {
   color: #726e6e;
   font-size: 16px;
   font-family: sans-serif !important;
@@ -2298,17 +2335,23 @@ nav .nav-list li:hover {
   -webkit-transition: 0.2s ease all;
 }
 .modal-overlay .modal-container .addproduct-form .group .input:focus ~ label,
-.modal-overlay .modal-container .addproduct-form .group .input:valid ~ label {
+.modal-overlay .modal-container .addproduct-form .group .input:valid ~ label, .modal-overlay .modal-container .editproduct-form .group .input:focus ~ label,
+.modal-overlay .modal-container .editproduct-form .group .input:valid ~ label, .card-modal-overlay .modal-container .addproduct-form .group .input:focus ~ label,
+.card-modal-overlay .modal-container .addproduct-form .group .input:valid ~ label, .card-modal-overlay .modal-container .editproduct-form .group .input:focus ~ label,
+.card-modal-overlay .modal-container .editproduct-form .group .input:valid ~ label {
   top: -20px;
   font-size: 14px;
 }
-.modal-overlay .modal-container .addproduct-form .group .bar {
+.modal-overlay .modal-container .addproduct-form .group .bar, .modal-overlay .modal-container .editproduct-form .group .bar, .card-modal-overlay .modal-container .addproduct-form .group .bar, .card-modal-overlay .modal-container .editproduct-form .group .bar {
   position: relative;
   display: block;
   width: 200px;
 }
 .modal-overlay .modal-container .addproduct-form .group .bar:before,
-.modal-overlay .modal-container .addproduct-form .group .bar:after {
+.modal-overlay .modal-container .addproduct-form .group .bar:after, .modal-overlay .modal-container .editproduct-form .group .bar:before,
+.modal-overlay .modal-container .editproduct-form .group .bar:after, .card-modal-overlay .modal-container .addproduct-form .group .bar:before,
+.card-modal-overlay .modal-container .addproduct-form .group .bar:after, .card-modal-overlay .modal-container .editproduct-form .group .bar:before,
+.card-modal-overlay .modal-container .editproduct-form .group .bar:after {
   content: "";
   height: 2px;
   width: 0;
@@ -2318,14 +2361,17 @@ nav .nav-list li:hover {
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-.modal-overlay .modal-container .addproduct-form .group .bar:before {
+.modal-overlay .modal-container .addproduct-form .group .bar:before, .modal-overlay .modal-container .editproduct-form .group .bar:before, .card-modal-overlay .modal-container .addproduct-form .group .bar:before, .card-modal-overlay .modal-container .editproduct-form .group .bar:before {
   left: 50%;
 }
-.modal-overlay .modal-container .addproduct-form .group .bar:after {
+.modal-overlay .modal-container .addproduct-form .group .bar:after, .modal-overlay .modal-container .editproduct-form .group .bar:after, .card-modal-overlay .modal-container .addproduct-form .group .bar:after, .card-modal-overlay .modal-container .editproduct-form .group .bar:after {
   right: 50%;
 }
 .modal-overlay .modal-container .addproduct-form .group .input:focus ~ .bar:before,
-.modal-overlay .modal-container .addproduct-form .group .input:focus ~ .bar:after {
+.modal-overlay .modal-container .addproduct-form .group .input:focus ~ .bar:after, .modal-overlay .modal-container .editproduct-form .group .input:focus ~ .bar:before,
+.modal-overlay .modal-container .editproduct-form .group .input:focus ~ .bar:after, .card-modal-overlay .modal-container .addproduct-form .group .input:focus ~ .bar:before,
+.card-modal-overlay .modal-container .addproduct-form .group .input:focus ~ .bar:after, .card-modal-overlay .modal-container .editproduct-form .group .input:focus ~ .bar:before,
+.card-modal-overlay .modal-container .editproduct-form .group .input:focus ~ .bar:after {
   width: 50%;
 }
 

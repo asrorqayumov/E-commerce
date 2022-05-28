@@ -42,32 +42,57 @@
 })();
 
 // card
-let buy = document.querySelectorAll(".buy");
-let remove = document.querySelectorAll(".remove");
-buy.forEach((item) => {
-  item.addEventListener("click", (e) => {
-    let bottom = e.target.parentElement.parentElement.parentElement;
-    bottom.classList.add("clicked");
+export  function addOpen () {
+  let buy = document.querySelectorAll(".buy");
+  buy.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      let bottom = e.target.parentElement.parentElement.parentElement;
+      bottom.classList.add("clicked");
+    });
   });
-});
-remove.forEach((item) => {
-  item.addEventListener("click", (e) => {
-    let bottom = e.target.parentElement.parentElement.parentElement;
-    bottom.classList.remove("clicked");
+}
+export function removeOpen () {
+  let remove = document.querySelectorAll(".remove");
+  remove.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      let bottom = e.target.parentElement.parentElement.parentElement;
+      bottom.classList.remove("clicked");
+    });
   });
-});
+}
 
 // modal
-const modalBtn = document.querySelector(".modal-btn");
-const modal = document.querySelector(".modal-overlay");
-const closeBtn = document.querySelectorAll(".close-btn");
 
-modalBtn.addEventListener("click", function () {
-  modal.classList.add("open-modal");
-});
-
-closeBtn.forEach(function (btn) {
-  btn.addEventListener("click", function () {
-    modal.classList.remove("open-modal");
+export function toggleModal() {
+  const modalBtn = document.querySelector(".modal-btn");
+  const modal = document.querySelector(".modal-overlay");
+  const closeBtn = document.querySelectorAll(".close-btn");
+  
+  modalBtn.addEventListener("click", function () {
+    modal.classList.add("open-modal");
   });
-});
+  
+  closeBtn.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      modal.classList.remove("open-modal");
+    });
+  });
+}
+
+export function toggleCardModal() {
+  const modalBtn = document.querySelectorAll(".card-modal-btn");
+  const cardModal = document.querySelector(".card-modal-overlay");
+  const closeBtn = document.querySelectorAll(".close-btn");
+  
+  modalBtn.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      cardModal.classList.add("open-modal");
+    });
+  });
+  
+  closeBtn.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      cardModal.classList.remove("open-modal");
+    });
+  });
+}

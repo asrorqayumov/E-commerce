@@ -13,3 +13,11 @@
     color: #fff;
     float: right;
 }
+
+.btn-disabled{
+    cursor: not-allowed !important;
+    background:rgba($color: $fair, $alpha: .6) !important;
+    &:active {
+        transform: scale(1) !important;
+    }
+}
