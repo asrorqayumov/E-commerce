@@ -12,32 +12,64 @@ export function displayCards(cards) {
     btnTotal.classList.add("btn-disabled");
   }
   let total = cards?.reduce((acc, curr) => {
-    return (acc += +curr?.price);
+    return (acc += +curr?.price * +curr?.amount);
   }, 0);
   priceTotal.innerHTML = total;
   cards?.forEach(function (item) {
+    let { title, price, description, id, amount } = item;
     html += `
-    <div class="product" data-id=${item?.id}>
-    <img
-      src="https://cdn-icons-png.flaticon.com/512/30/30893.png"
-      alt=""
-    />
-    <div class="product-info">
-      <h3>${item?.title}</h3>
-      <br />
-      <p>
-        ${item?.description}
-      </p>
-      <br />
-      <div class="card-number-wrapper">
-        <p class="product-price">${item?.price}$</p>
-      </div>
-    </div>
-  </div>
+    <div class="product" data-id=${id}>
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/30/30893.png"
+        alt=""
+      />
+       <div class="product-info">
+        <h3>${title}</h3>
+          <br />
+           <p>
+            ${description}
+           </p>
+            <br />
+          <div class="card-number-wrapper">
+                  <p class="product-price">${price * amount}$</p>
+                  <div data-id=${id}>
+                      <button class="btn me-3 btn-minus ${
+                        amount == 1 ? "amount-btn-disabled" : ""
+                      }">-</button>
+                      <p class="product-howmuch">${amount}</p>
+                      <button class="btn ms-3 btn-plus">+</button>
+                    </div>
+                </div>
+              </div>
+            </div>
         `;
   });
   cardsWrapper.innerHTML = html;
 }
+
+export function changeAmount(dataCards){
+  let btnMinus = document.querySelectorAll(".btn-minus");
+  let btnPlus = document.querySelectorAll(".btn-plus"); 
+  btnPlus.forEach(function(item){
+    item.addEventListener("click", function(e){
+      let id = e.target.closest("[data-id]").dataset.id;
+      let card = dataCards.find(item => item.id == id);
+      card.amount++;
+      saveLocalstorage("cards", dataCards);
+      location.reload();
+    });
+  });
+  btnMinus.forEach(function(item){
+    item.addEventListener("click", function(e){
+      let id = e.target.closest("[data-id]").dataset.id;
+      let card = dataCards.find(item => item.id == id);
+      card.amount--;
+      saveLocalstorage("cards", dataCards);
+      location.reload();
+    });
+  });
+}
+
 
 export function addCard(dataProducts, dataCards) {
   let addBtn = document.querySelectorAll(".buy");

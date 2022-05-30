@@ -2064,6 +2064,11 @@ nav .nav-list li:hover {
   transform: scale(1) !important;
 }
 
+.amount-btn-disabled {
+  pointer-events: none !important;
+  background: rgba(0, 0, 0, 0.1);
+}
+
 .card {
   width: 150px;
   height: 250px;

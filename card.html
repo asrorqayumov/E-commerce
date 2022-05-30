@@ -51,7 +51,30 @@
           <h1>Card</h1>
         </div>
         <div class="row">
-          <div class="col-sm-9 cards-wrapper"></div>
+          <div class="col-sm-9 cards-wrapper">
+            <div class="product" data-id=${item?.id}>
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/30/30893.png"
+                alt=""
+              />
+              <div class="product-info">
+                <h3>${item?.title}</h3>
+                <br />
+                <p>
+                  ${item?.description}
+                </p>
+                <br />
+                <div class="card-number-wrapper">
+                  <p class="product-price">${item?.price}$</p>
+                  <div>
+                      <button class="btn me-3 btn-minus">-</button>
+                      <p class="product-howmuch">1</p>
+                      <button class="btn ms-3 btn-plus">+</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="col-sm-3 ps-4">
             <div class="box-total">
               <h3 class="price-total pt-3">

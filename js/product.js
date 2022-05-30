@@ -6,12 +6,12 @@ export function toLowercase(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-export function Card(title, price, description) {
+export function Card(title, price, description,amount = 1) {
   this.title = title;
   this.price = price;
   this.description = description;
   this.id = Math.round(Math.random() * 1000000);
-  this.number = 1;
+  this.amount = amount;
 }
 
 export function haveCard(id, dataCards) {
@@ -124,3 +124,4 @@ export function createProduct(dataProducts) {
     displayProducts(dataProducts);
   });
 }
+

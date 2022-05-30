@@ -5,7 +5,7 @@ import {
   displayBadge,
   createProduct,
 } from "./product";
-import { displayCards, addCard, removeCard, productChangeNumber, deleteCard, editCard } from "./cards";
+import { displayCards, addCard, removeCard, deleteCard, editCard, changeAmount } from "./cards";
 let dataProducts = [...(JSON.parse(localStorage.getItem("products")) || [])];
 let dataCards = [...(JSON.parse(localStorage.getItem("cards")) || [])];
 
@@ -25,5 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   if (location.pathname === "/card.html") {
     displayCards(dataCards);
+    changeAmount(dataCards);
   }
 });

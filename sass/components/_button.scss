@@ -21,3 +21,8 @@
         transform: scale(1) !important;
     }
 }
+
+.amount-btn-disabled{
+    pointer-events: none !important;
+    background:rgba($color: transparent, $alpha: .1);
+}
