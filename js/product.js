@@ -84,10 +84,10 @@ export function displayProducts(dataProducts, dataCards) {
     <div class="inside">
       <div class="icon"><i class="material-icons">info_outline</i></div>
       <div class="contents">
-        <p class="description">
+        <p class="description pt-1">
           ${description ? description : ""}
         </p>
-        <div class="btn-group" data-id=${id} >
+        <div class="btn-group pb-1" data-id=${id} >
           <button class="btn btn-edit me-3 card-modal-btn"><i class="fa-solid fa-pen"></i></button>
           <button class="btn btn-delete"><i class="fa-solid fa-trash-can"></i></button>
         </div>
