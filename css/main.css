@@ -2393,12 +2393,22 @@ nav .nav-list li:hover {
 
 html,
 body {
-  background: linear-gradient(360deg, #fdfbfb 10%, #ebedee 360%);
+  background: #F2F2F2;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
   font-family: sans-serif;
   font-size: 16px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #FF7A01;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=main.css.map */

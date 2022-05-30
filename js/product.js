@@ -31,20 +31,19 @@ export function displayProducts(dataProducts, dataCards) {
     <form action="" class="editproduct-form">
       <p class="py-4 modal-title">Edit product</p>
       <div class="group my-5">
-        <input required name="title" type="text" class="input" />
+        <input name="title" type="text" class="input" />
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Title</label>
       </div>
       <div class="group my-5">
-        <input  required name="price" type="number" class="input" />
+        <input  name="price" type="number" class="input" />
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Price</label>
       </div>
       <div class="group">
         <textarea
-          required
           class="textarea my-5"
           placeholder="Description"
           name="description"

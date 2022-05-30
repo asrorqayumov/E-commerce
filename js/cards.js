@@ -70,7 +70,6 @@ export function changeAmount(dataCards){
   });
 }
 
-
 export function addCard(dataProducts, dataCards) {
   let addBtn = document.querySelectorAll(".buy");
   addBtn.forEach((item) => {
@@ -131,6 +130,9 @@ export function editCard(dataProducts, dataCards) {
         return item.id == id;
       });
       let form = document.querySelector(".editproduct-form");
+      form.title.value = cardfromProduct.title;
+      form.description.value = cardfromProduct.description;
+      form.price.value = cardfromProduct.price;
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         let title = form.title.value;
