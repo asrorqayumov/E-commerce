@@ -1910,7 +1910,7 @@ nav {
   height: 80px;
   width: 100%;
   background-color: #ffffff;
-  position: relative;
+  position: fixed;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1963,6 +1963,14 @@ nav .nav-list li:hover {
   transition: transform 0.5s;
 }
 
+.sticky {
+  background: rgba(132, 124, 124, 0.3);
+  border-radius: 0 !important;
+}
+
+#home-page, #card-page {
+  padding-top: 80px;
+}
 #home-page .heading-title, #card-page .heading-title {
   font-size: 1.8rem;
   font-weight: 700;
@@ -2116,7 +2124,7 @@ nav .nav-list li:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  padding-left: 10px;
   height: 100%;
   width: 100%;
   float: left;
@@ -2158,7 +2166,7 @@ nav .nav-list li:hover {
   overflow: hidden;
 }
 .card .card-container .bottom .right .details {
-  margin-right: 12px;
+  margin-right: 33px;
   float: right;
   width: calc(70% - 40px);
 }

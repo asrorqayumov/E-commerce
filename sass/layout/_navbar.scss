@@ -2,7 +2,7 @@ nav {
   height: 80px;
   width: 100%;
   background-color: #ffffff;
-  position: relative;
+  position: fixed;
   @include flexbox(row, center, space-between);
   border-radius: 12px;
   padding-left: 50px;
@@ -47,4 +47,10 @@ nav {
       }
     }
   }
+}
+
+
+.sticky{
+   background: rgba($color: #847c7c, $alpha: 0.3);
+   border-radius: 0  !important;
 }
