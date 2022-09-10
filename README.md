@@ -14,7 +14,7 @@
 
 > This is E-commerce site for shopping
 
-### 🏠 [Homepage](https://github.com/asrorqayumov/E-commerce-simple-#readme)
+### 🏠 [Homepage](https://github.com/asrorqayumov/E-commerce#readme)
 
 ## Install
 
