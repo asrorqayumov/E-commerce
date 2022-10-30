@@ -15,7 +15,8 @@ export function displayCards(cards) {
     return (acc += +curr?.price * +curr?.amount);
   }, 0);
   priceTotal.innerHTML = total;
-  cards?.forEach(function (item) {
+
+  cards?.forEach(item => {
     let { title, price, description, id, amount } = item;
     html += `
     <div class="product" data-id=${id}>
@@ -56,7 +57,7 @@ export function changeAmount(dataCards){
       let card = dataCards.find(item => item.id == id);
       card.amount++;
       saveLocalstorage("cards", dataCards);
-      location.reload();
+     location.reload();
     });
   });
   btnMinus.forEach(function(item){

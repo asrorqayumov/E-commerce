@@ -19,6 +19,7 @@ export function haveCard(id, dataCards) {
   return card ? true : false;
 }
 
+
 export function displayProducts(dataProducts, dataCards) {
   let productsWrapper = document.querySelector(".products-wrapper");
   let html = "";
